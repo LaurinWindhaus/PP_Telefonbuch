@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPContacts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style_sql.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/poeppelmann_logo.jpg">
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <style>
+        @media (min-width: 992px) { /* Adjusting for large screens */
+            .navbar .collapse .d-flex {
+                justify-content: center; /* Centers the search box */
+            }
+        }
+    
+        .search-input {
+            font-size: 1.25rem; /* Increases the font size */
+            height: auto; /* Adjust height based on content */
+            padding: .375rem .75rem; /* Increase padding */
+        }
+    </style>
+    
+</head>
+    <body style="background-color: #263c65;">
+        <!-- <nav class="navbar navbar-expand-lg" style="background-color: #263c65;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="static/img/poeppelmann_sql.png" alt="Logo" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <h5 class="text-light">Contacts</h5>
+                    </ul>
+                    <form class="d-flex justify-content-center w-100" role="search">
+                        <input class="form-control me-2 search-input" id="v" type="search" placeholder="Search" aria-label="Search" style="max-width: 500px; width: 100%;">
+                    </form>
+                </div>
+            </div>
+        </nav> -->
+
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 text-start">
+                    <img src="{{url_for('static', filename='src/poeppelmann_logo.svg')}}" alt="">
+                </div>
+                <div class="col-12 col-md-8 text-md-end text-start">
+                    <h2 class="text-light">PPContacts</h2>
+                </div>
+            </div>
+            
+            <br>
+
+            <div class="row align-items-center">
+                <!-- Added responsive classes to hide on xs to sm screens -->
+                <div class="col-12">
+                    <!-- <form class="d-flex"> -->
+                        <input class="form-control me-2 search-input" placeholder="Search" aria-label="Search" id="v">
+                        <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div id="results" style="background-color: #263c65;"></div>
+        <div id="livesearch" style="background-color: #263c65;"></div>
+        <div class="search-results container text-light d-flex justify-content-center" id="searchResults" style="background-color: #263c65;"></div>
+        <table id="searchResults-liste" style="background-color: #263c65;"></table>
+        <div class="pagination" id="pagination" style="background-color: #263c65;"></div>
+
+        <script src="{{url_for('static', filename='tbl_ausgabe.js')}}"></script>
+        <script src="{{url_for('static', filename='script_sql.js')}}"></script>
+        <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    </body>
+</html>

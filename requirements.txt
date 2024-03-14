@@ -1,0 +1,15 @@
+flask
+redis
+flask-cors
+jsonpickle
+kaleido
+nbformat
+plotly
+pandas
+sqlalchemy
+pyodbc
+requests
+pdf2image
+pyrfc
+influxdb
+phonenumbers

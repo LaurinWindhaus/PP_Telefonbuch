@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    build: .
+    networks:
+    - x1
+    ports:
+     - "8092:80"
+    volumes:
+     - .:/project
+    restart: always
+     
+networks:
+  x1:
+    # driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: "172.19.1.148/29"
